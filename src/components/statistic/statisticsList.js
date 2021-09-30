@@ -8,7 +8,7 @@ const createRandomColor = () => {
 
 export default function Statistics({ title, stats }) {
   return (
-    <section>
+    <div>
       {title && <h2>{title.toUpperCase()}</h2>}
       <ul>
         {stats.map(({ id, label, percentage }) => (
@@ -18,7 +18,7 @@ export default function Statistics({ title, stats }) {
           </li>
         ))}
       </ul>
-    </section>
+    </div>
   );
 }
 
@@ -26,7 +26,7 @@ Statistics.propTypes = {
   title: PropTypes.string.isRequired,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })

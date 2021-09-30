@@ -6,34 +6,34 @@ export default function Profile({
   name,
   tag,
   location,
-  stats,
+  stats: { followers, views, likes },
 }) {
   return (
-    <div class="profile">
-      <div class="description">
+    <div className="profile">
+      <div className="description">
         <img
           src={imgUrl}
           alt="Аватар пользователя"
-          class="avatar"
+          className="avatar"
           width="460px"
         />
-        <p class="name">{name}</p>
-        <p class="tag">@{tag}</p>
-        <p class="location">{location}</p>
+        <p className="name">{name}</p>
+        <p className="tag">@{tag}</p>
+        <p className="location">{location}</p>
       </div>
 
-      <ul class="stats">
+      <ul className="stats">
         <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{stats.followers}</span>
+          <span className="label">Followers</span>
+          <span className="quantity">{followers}</span>
         </li>
         <li>
-          <span class="label">Views</span>
-          <span class="quantity">{stats.views}</span>
+          <span className="label">Views</span>
+          <span className="quantity">{views}</span>
         </li>
         <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{stats.likes}</span>
+          <span className="label">Likes</span>
+          <span className="quantity">{likes}</span>
         </li>
       </ul>
     </div>
@@ -44,8 +44,9 @@ Profile.propTypes = {
   imgUrl: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  likes: PropTypes.number.isRequired,
-  views: PropTypes.number.isRequired,
-  followers: PropTypes.number.isRequired,
+  stats: PropTypes.exact({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }).isRequired,
 };
