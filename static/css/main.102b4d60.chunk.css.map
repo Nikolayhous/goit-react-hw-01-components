@@ -1,1 +1,0 @@
-{"version":3,"sources":["webpack://src/components/friends/Friend.module.css"],"names":[],"mappings":"AAAA,6BACI,YAAa,CACb,qBAAsB,CACtB,sBACJ","file":"main.102b4d60.chunk.css","sourcesContent":[".friends__list {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n}\n"]}
