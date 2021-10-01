@@ -1,0 +1,36 @@
+.statics {
+    padding: 50px 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    padding: 45px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
+
+.label {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.percentage {
+    font-size: 28px;
+    font-weight: 700;
+}

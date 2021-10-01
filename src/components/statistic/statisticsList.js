@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import s from './Statistical.module.css';
 
 const createRandomColor = () => {
     return `rgb(${(Math.random() * 255) << 0}, ${(Math.random() * 255) << 0}, ${
@@ -8,16 +9,17 @@ const createRandomColor = () => {
 
 export default function Statistics({ title, stats }) {
     return (
-        <div className="statics">
-            {title && <h2>{title.toUpperCase()}</h2>}
-            <ul>
+        <div className={s.statics}>
+            {title && <h2 className={s.title}>{title}</h2>}
+            <ul className={s.list}>
                 {stats.map(({ id, label, percentage }) => (
                     <li
                         key={id}
                         style={{ backgroundColor: createRandomColor() }}
+                        className={s.item}
                     >
-                        <span>{label}</span>
-                        <span>{percentage}%</span>
+                        <span className={s.label}>{label}</span>
+                        <span className={s.percentage}>{percentage}%</span>
                     </li>
                 ))}
             </ul>
