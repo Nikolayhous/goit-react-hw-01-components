@@ -41,7 +41,7 @@ export default function Profile({
 }
 
 Profile.propTypes = {
-    imgUrl: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     stats: PropTypes.exact({

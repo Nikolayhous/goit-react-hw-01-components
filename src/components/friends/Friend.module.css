@@ -21,11 +21,20 @@
 }
 
 .avatar {
-    width: 125px;
+    width: 100px;
     margin-right: 25px;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+    border-radius: 10%;
 }
 
 .name {
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 600;
+}
+
+.status {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 35px;
 }
