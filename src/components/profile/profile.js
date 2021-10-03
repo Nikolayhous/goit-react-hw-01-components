@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import defaultImage from '../profile/default.jpg';
+import defaultImage from '../../images/default.jpg';
 import s from './Profile.module.css';
 
 export default function Profile({

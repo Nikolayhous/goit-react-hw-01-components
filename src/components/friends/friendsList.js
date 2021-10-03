@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import CreateItemFriends from './FriendsItem';
 import s from './Friend.module.css';
 
 export default function FriendsList({ friends }) {
@@ -6,17 +7,13 @@ export default function FriendsList({ friends }) {
         <div className={s.friends}>
             <ul className={s.friends__list}>
                 {friends.map(({ avatar, name, isOnline, id }) => (
-                    <li key={id} className={s.friends__item}>
-                        <span
-                            className={s.status}
-                            style={{
-                                backgroundColor: isOnline ? 'green' : 'red',
-                            }}
-                        >
-                            {isOnline}
-                        </span>
-                        <img className={s.avatar} src={avatar} alt={name} />
-                        <p className={s.name}>{name}</p>
+                    <li key={id}>
+                        <CreateItemFriends
+                            name={name}
+                            avatar={avatar}
+                            isOnline={isOnline}
+                            id={id}
+                        />
                     </li>
                 ))}
                 ;
@@ -27,10 +24,7 @@ export default function FriendsList({ friends }) {
 
 FriendsList.propTypes = {
     friends: PropTypes.arrayOf(
-        PropTypes.exact({
-            avatar: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            isOnline: PropTypes.bool.isRequired,
+        PropTypes.shape({
             id: PropTypes.number.isRequired,
         }),
     ),
